@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class activity_preco : AppCompatActivity() {
@@ -27,13 +28,22 @@ class activity_preco : AppCompatActivity() {
         btnProximo.setOnClickListener {
 
             val precoStr: String = edtPreco.text.toString()
-            val preco = precoStr.toFloat()
 
-            val intent = Intent (this, ActivityConsumo :: class.java)
-            intent.putExtra("KEY_PRECO", preco)
+            if (precoStr == "" || precoStr == "0") {
+                Snackbar.make(
+                    edtPreco,
+                    "Favor preencha o campo com algum valor maior que 0",
+                    Snackbar.LENGTH_LONG
+                )
+                    .show()
+            } else {
 
+                val preco = precoStr.toFloat()
 
-            startActivity(intent)
+                val intent = Intent(this, ActivityConsumo::class.java)
+                intent.putExtra("KEY_PRECO", preco)
+                startActivity(intent)
+            }
         }
     }
 }
