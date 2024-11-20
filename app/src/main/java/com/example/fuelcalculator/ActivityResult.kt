@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.textfield.TextInputEditText
 
 class ActivityResult : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,15 +17,10 @@ class ActivityResult : AppCompatActivity() {
             insets
         }
         val preco = intent.getFloatExtra("KEY_PRECO", 0f)
-        println("TESTE " + preco)
-
         val consumo = intent.getFloatExtra("KEY_CONSUMO", 0f)
-        println("TESTE " + consumo)
-
         val trip = intent.getFloatExtra("KEY_TRIP", 0f)
-        println("TESTE " + trip)
 
-        val valor = preco * trip / consumo
-        println ("O valor que será gasto é de: $" + valor)
+        val result = preco * trip / consumo
+        println(result)
     }
 }
