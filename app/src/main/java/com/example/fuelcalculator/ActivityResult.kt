@@ -1,11 +1,13 @@
 package com.example.fuelcalculator
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.textfield.TextInputEditText
+import org.w3c.dom.Text
 
 class ActivityResult : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +23,19 @@ class ActivityResult : AppCompatActivity() {
         val trip = intent.getFloatExtra("KEY_TRIP", 0f)
 
         val result = preco * trip / consumo
-        println(result)
+
+
+        val tvResult = findViewById<TextView>(R.id.tv_result)
+        tvResult.text = result.toString()
+
+        val tvPreco = findViewById<TextView>(R.id.tv_preco)
+        tvPreco.text = preco.toString()
+
+        val tvConsumo = findViewById<TextView>(R.id.tv_consumo)
+        tvConsumo.text = consumo.toString()
+
+        val tvTrip = findViewById<TextView>(R.id.tv_trip)
+        tvTrip.text = trip.toString()
+
     }
 }

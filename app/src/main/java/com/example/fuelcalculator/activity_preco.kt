@@ -45,5 +45,12 @@ class activity_preco : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        val btnVoltar = findViewById<Button>(R.id.btn_voltar)
+
+        btnVoltar.setOnClickListener{
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
