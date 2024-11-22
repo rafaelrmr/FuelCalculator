@@ -1,6 +1,8 @@
 package com.example.fuelcalculator
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -36,6 +38,14 @@ class ActivityResult : AppCompatActivity() {
 
         val tvTrip = findViewById<TextView>(R.id.tv_trip)
         tvTrip.text = trip.toString()
+
+        val btnNovo = findViewById<Button>(R.id.btn_novo)
+
+        btnNovo.setOnClickListener{
+            val intent = Intent(this, activity_preco::class.java)
+            startActivity(intent)
+
+        }
 
     }
 }
