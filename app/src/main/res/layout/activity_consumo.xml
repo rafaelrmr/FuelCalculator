@@ -3,20 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@drawable/gradient_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActivityConsumo">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_consumo_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:textSize="22dp"
         android:text="Consumo do Carro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+       app:layout_constraintTop_toBottomOf="@+id/btn_voltar"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -26,12 +25,13 @@
         android:text="Etapa 2 - Digite o consumo do carro em Km/l"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_consumo_label" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        app:hintEnabled="false"
         tools:layout_editor_absoluteX="parent"
         tools:layout_editor_absoluteY="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4">
@@ -41,6 +41,8 @@
             android:id="@+id/edt_consumo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg"
+            android:drawableEnd="@drawable/ic_car"
             android:inputType="numberDecimal"
             android:maxLength="5"
             android:hint="Ex.: 11.6 Km/l"/>
@@ -56,5 +58,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_consumo_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Voltar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

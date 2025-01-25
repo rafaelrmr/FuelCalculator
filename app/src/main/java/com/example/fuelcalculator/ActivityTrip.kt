@@ -48,5 +48,11 @@ class ActivityTrip : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        val btnVoltar = findViewById<Button>(R.id.btn_voltar)
+        btnVoltar.setOnClickListener{           
+            val intent = Intent(this,ActivityConsumo::class.java)
+            startActivity(intent)
+        }
+
     }
 }

@@ -48,5 +48,11 @@ class ActivityConsumo : AppCompatActivity() {
         }
 
         }
+        val btnVoltar = findViewById<Button>(R.id.btn_voltar)
+
+        btnVoltar.setOnClickListener{
+          val intent = Intent(this,activity_preco::class.java)
+          startActivity(intent)
+        }
     }
 }
