@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/main"
-        android:background="@drawable/gradient_main"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@drawable/gradient_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/vg_header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/vg_header"
+        <ImageView
+            android:id="@+id/vg_linear"
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gradient_bg"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_marginTop="224dp"
-                android:layout_height="wrap_content">
-            </ImageView>
-        </LinearLayout>
+            android:layout_marginTop="206dp"
+            android:layout_height="wrap_content">
+        </ImageView>
+    </LinearLayout>
+    <ImageView
+       android:id="@+id/img1"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:src="@drawable/carrovj">
+    </ImageView>
 
     <TextView
         android:id="@+id/tv_main_label"
@@ -36,7 +43,7 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vg_header" />
+        app:layout_constraintTop_toBottomOf="@+id/img1" />
 
     <TextView
         android:id="@+id/textView2"
@@ -73,4 +80,4 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
